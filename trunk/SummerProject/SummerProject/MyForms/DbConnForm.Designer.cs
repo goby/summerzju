@@ -56,6 +56,8 @@
             this.btnStep2Cancel = new System.Windows.Forms.Button();
             this.btnStep2Pre = new System.Windows.Forms.Button();
             this.btnStep2Next = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -64,6 +66,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.progressBar1);
             this.panel1.Controls.Add(this.btnDBConnPre);
             this.panel1.Controls.Add(this.lblItemDesctription);
             this.panel1.Controls.Add(this.txtDBServer);
@@ -128,6 +131,7 @@
             this.btnDBConnCancel.TabIndex = 7;
             this.btnDBConnCancel.Text = "取消(&Q)";
             this.btnDBConnCancel.UseVisualStyleBackColor = false;
+            this.btnDBConnCancel.Click += new System.EventHandler(this.btnDBConnCancel_Click);
             // 
             // checkOSA
             // 
@@ -141,6 +145,7 @@
             this.checkOSA.TabIndex = 3;
             this.checkOSA.Text = "使用Windows账号验证方式";
             this.checkOSA.UseVisualStyleBackColor = false;
+            this.checkOSA.CheckedChanged += new System.EventHandler(this.checkOSA_CheckedChanged);
             // 
             // btnDBConnNext
             // 
@@ -351,6 +356,7 @@
             this.btnStep2Cancel.TabIndex = 3;
             this.btnStep2Cancel.Text = "取消(&Q)";
             this.btnStep2Cancel.UseVisualStyleBackColor = true;
+            this.btnStep2Cancel.Click += new System.EventHandler(this.btnStep2Cancel_Click);
             // 
             // btnStep2Pre
             // 
@@ -372,6 +378,22 @@
             this.btnStep2Next.Text = "确定(&N)";
             this.btnStep2Next.UseVisualStyleBackColor = true;
             this.btnStep2Next.Click += new System.EventHandler(this.btnStep2Next_Click);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(0, 300);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(321, 10);
+            this.progressBar1.TabIndex = 100000;
+            this.progressBar1.Tag = "";
             // 
             // DbConnForm
             // 
@@ -422,5 +444,7 @@
         private System.Windows.Forms.Button btnStep2Cancel;
         private System.Windows.Forms.Button btnStep2Pre;
         private System.Windows.Forms.Button btnStep2Next;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

@@ -21,7 +21,7 @@ namespace NewSummerProject
         public CreateNewDocument()
         {
             //update the base properties
-            base.m_category = ".NET Samples";
+            base.m_category = "Auto Generation";
             base.m_caption = "NewDocument";
             base.m_message = "Create a new map";
             base.m_toolTip = "Create a new map";
