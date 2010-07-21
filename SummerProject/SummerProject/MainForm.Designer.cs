@@ -52,6 +52,8 @@ namespace NewSummerProject
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusBarXY = new System.Windows.Forms.ToolStripStatusLabel();
             this.axSceneControl1 = new ESRI.ArcGIS.Controls.AxSceneControl();
+            this.数据转换ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.生成RasterRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axMapControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axToolbarControl1)).BeginInit();
@@ -65,7 +67,8 @@ namespace NewSummerProject
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuFile,
-            this.数据库操作ToolStripMenuItem});
+            this.数据库操作ToolStripMenuItem,
+            this.数据转换ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(859, 25);
@@ -220,6 +223,21 @@ namespace NewSummerProject
             this.axSceneControl1.Size = new System.Drawing.Size(668, 466);
             this.axSceneControl1.TabIndex = 8;
             // 
+            // 数据转换ToolStripMenuItem
+            // 
+            this.数据转换ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.生成RasterRToolStripMenuItem});
+            this.数据转换ToolStripMenuItem.Name = "数据转换ToolStripMenuItem";
+            this.数据转换ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.数据转换ToolStripMenuItem.Text = "数据转换";
+            // 
+            // 生成RasterRToolStripMenuItem
+            // 
+            this.生成RasterRToolStripMenuItem.Name = "生成RasterRToolStripMenuItem";
+            this.生成RasterRToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.生成RasterRToolStripMenuItem.Text = "生成Raster...(&R)";
+            this.生成RasterRToolStripMenuItem.Click += new System.EventHandler(this.生成RasterRToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -272,6 +290,8 @@ namespace NewSummerProject
         private System.Windows.Forms.ToolStripMenuItem 数据库操作ToolStripMenuItem;
         private ESRI.ArcGIS.Controls.AxSceneControl axSceneControl1;
         private System.Windows.Forms.ToolStripMenuItem 连接数据库CToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 数据转换ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 生成RasterRToolStripMenuItem;
     }
 }
 
