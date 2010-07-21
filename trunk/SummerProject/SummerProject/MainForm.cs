@@ -12,6 +12,7 @@ using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Controls;
 using ESRI.ArcGIS.ADF;
 using ESRI.ArcGIS.SystemUI;
+using SummerProject.MyForms;
 
 namespace NewSummerProject
 {
@@ -144,6 +145,13 @@ namespace NewSummerProject
         {
             MyForms.DbConnForm connForm = new NewSummerProject.MyForms.DbConnForm();
             connForm.ShowDialog();
+        }
+
+        private void Éú³ÉRasterRToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateRasterForm rasForm = new CreateRasterForm();
+            //this.axMapControl1.Map = rasForm.Map;
+            rasForm.ShowDialog();
         }
     }
 }

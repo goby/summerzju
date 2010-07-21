@@ -60,9 +60,13 @@
     <Reference Include="ESRI.ArcGIS.ADF" />
     <Reference Include="ESRI.ArcGIS.AxControls" />
     <Reference Include="ESRI.ArcGIS.Carto" />
+    <Reference Include="ESRI.ArcGIS.Catalog, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.CatalogUI, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
     <Reference Include="ESRI.ArcGIS.Controls" />
     <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
     <Reference Include="ESRI.ArcGIS.Display" />
+    <Reference Include="ESRI.ArcGIS.GeoAnalyst, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
     <Reference Include="ESRI.ArcGIS.Geodatabase, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
     <Reference Include="ESRI.ArcGIS.GeoDatabaseUI, Version=9.3.0.1770, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL" />
     <Reference Include="ESRI.ArcGIS.System" />
@@ -82,6 +86,12 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MyDataOperate\GeoDB.cs" />
+    <Compile Include="MyForms\CreateRasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForms\CreateRasterForm.Designer.cs">
+      <DependentUpon>CreateRasterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyForms\DbConnForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +109,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForms\CreateRasterForm.resx">
+      <DependentUpon>CreateRasterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForms\DbConnForm.resx">
       <DependentUpon>DbConnForm.cs</DependentUpon>
