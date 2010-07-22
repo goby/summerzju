@@ -69,7 +69,7 @@ namespace SummerProject.MyForms
             }
         }//Open Feature Class
 
-        private void IDWOperate(ref IFeatureClass inFC)
+        private void IDWOperate(IFeatureClass inFC)
         {
             IFeatureClassDescriptor iFCDesc = new FeatureClassDescriptorClass();
             //获取选中的字符串
@@ -80,27 +80,27 @@ namespace SummerProject.MyForms
 
             //设置输出Raster网格大小，默认的Raster输出空间范围和输入数据相同
             IRasterAnalysisEnvironment iRae = (IRasterAnalysisEnvironment)iIo;
-            object oCellSize = (object)textBox2.Text;
+            object oCellSize = (object)Convert.ToDouble(textBox2.Text);
             iRae.SetCellSize(esriRasterEnvSettingEnum.esriRasterEnvValue, ref oCellSize);
-
+           
             //搜索范围设置
             IRasterRadius iRadius = new RasterRadiusClass();
-            switch (comboBox2.SelectedIndex)
-            {
-                case 0:
+            //switch (comboBox2.SelectedIndex)
+            //{
+            //    case 0:
                     object dis = (object)Convert.ToDouble(textBox3.Text);
                     iRadius.SetVariable(Convert.ToInt32(textBox1.Text), ref dis);
-                    break;
-                case 1:
-                    object cou = (object)Convert.ToDouble(textBox3.Text);
-                    iRadius.SetFixed(Convert.ToDouble(textBox1.Text), ref cou);
-                    break;
-                default:
-                    break;
-            }
+            //        break;
+            //    case 1:
+            //        object cou = (object)Convert.ToDouble(textBox3.Text);
+            //        iRadius.SetFixed(Convert.ToDouble(textBox1.Text), ref cou);
+            //        break;
+            //    default:
+            //        break;
+            //}
 
             IGeoDataset iInputGeo = (IGeoDataset)iFCDesc;
-            object barrier = null;
+            object barrier = Type.Missing;
             IGeoDataset iOutputGeo = iIo.IDW(iInputGeo, Convert.ToDouble(textBox2.Text), iRadius, ref barrier);
 
             IRaster iOutRaster = (IRaster)iOutputGeo;
@@ -113,9 +113,9 @@ namespace SummerProject.MyForms
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            progressBar1.Increment(20);
-            IDWOperate(ref mFeatureClass);
-            progressBar1.Increment(50);
+            //progressBar1.Increment(20);
+            IDWOperate(mFeatureClass);
+            //progressBar1.Increment(50);
             IFeatureLayer iFLayer = new FeatureLayerClass();
             iFLayer.FeatureClass = mFeatureClass;
             //mIMap.AddLayer(iFLayer);
